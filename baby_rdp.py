@@ -24,11 +24,18 @@ def simplify(x,epsilon):
 if __name__ == '__main__':
     data_init=wdc.trans_data("washed_data_50_1.csv")
     see=[]
-    for i in np.arange(1,0,-0.001):
+    size=[]
+    for i in np.arange(0.03,0,-0.0001):
         epsilon=i
         data=data_init.apply(lambda row: simplify(row,epsilon),axis=1)
+        asize=data.apply(lambda row: len(row['coordinate']),axis=1)
+        asize=np.mean(asize)
+        size.append(asize)
         loss_num=data_init.apply(lambda row: calculate_deviation(row,data.loc[row.name]),axis=1)
         loss_num=np.mean(loss_num)
         see.append(loss_num)
+        print(f'正在计算{i}/1->0')
     see=pd.DataFrame(see,columns=['See'])
+    size=pd.DataFrame(size,columns=['size'])
     see.to_excel('see.xlsx')
+    size.to_excel('size.xlsx')
