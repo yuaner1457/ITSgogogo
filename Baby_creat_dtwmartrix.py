@@ -4,6 +4,7 @@ from DTW import DTW
 from sklearn.metrics import pairwise_distances
 import Baby_washdata_change as wsd
 
+
 def main():
     data=wsd.trans_data('simple_path(1).csv')
     flight=data['coordinate']
