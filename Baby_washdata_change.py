@@ -8,7 +8,7 @@ def trans(row_data):
     array=array.reshape(array.size//3,3)
     array=array.astype(float)
     row_data['coordinate']=array
-    return
+    return row_data
 
 
 #这个函数用于将相应.csv文件中的字符串类型的数据更改为numpy形式，字符串形式太恶心了
