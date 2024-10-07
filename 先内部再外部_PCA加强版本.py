@@ -30,7 +30,7 @@ def resample_flight_path(df, num_points=230):
 
 # 加载数据集并进行聚类及分析
 try:
-    file_path = 'valid_data_withoutlabels.csv'
+    file_path = 'train_data.csv'
     data = pd.read_csv(file_path)
 
     num_points = 230
