@@ -45,7 +45,7 @@ def align_labels(true_labels, predicted_labels):
 
 # 加载数据集并进行聚类及分析
 try:
-    file_path = 'train_data.csv'
+    file_path = 'valid_data_withoutlabels.csv'
     data = pd.read_csv(file_path)
 
     # 对每条航迹进行重采样
